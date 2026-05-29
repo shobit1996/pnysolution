@@ -15,6 +15,7 @@ beautifulsoup4==4.13.5
 bleach==6.2.0
 certifi==2025.4.26
 cffi==2.0.0
+whitenoise==6.12.0
 charset-normalizer==3.4.2
 comm==0.2.3
 cryptography==46.0.3
