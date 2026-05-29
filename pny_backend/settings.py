@@ -26,6 +26,8 @@ ALLOWED_HOSTS = ['pnysolution-production.up.railway.app', 'localhost', '127.0.0.
 CORS_ALLOWED_ORIGINS = [
     "https://www.pnysolutions.com",
 ]
+
+CSRF_TRUSTED_ORIGINS = ['https://pnysolution-production.up.railway.app']
 # ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1').split(',')
 
 
