@@ -21,7 +21,8 @@ SECRET_KEY = 'django-insecure-pny-talent-solutions-super-secret-key-yogi'
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 DEBUG = config('DEBUG', default=True, cast=bool)
-ALLOWED_HOSTS = ['pnysolution-production.up.railway.app']
+# ALLOWED_HOSTS = ['pnysolution-production.up.railway.app']
+ALLOWED_HOSTS = ['pnysolution-production.up.railway.app', 'localhost', '127.0.0.1']
 CORS_ALLOWED_ORIGINS = [
     "https://www.pnysolutions.com",
 ]
