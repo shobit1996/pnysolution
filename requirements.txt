@@ -16,7 +16,6 @@ bleach==6.2.0
 certifi==2025.4.26
 cffi==2.0.0
 charset-normalizer==3.4.2
-colorama==0.4.6
 comm==0.2.3
 cryptography==46.0.3
 debugpy==1.8.16
@@ -107,7 +106,6 @@ python-decouple==3.8
 python-dotenv==1.2.1
 python-json-logger==3.3.0
 pytz==2026.2
-pywinpty==3.0.0
 PyYAML==6.0.2
 pyzmq==27.0.2
 referencing==0.36.2
