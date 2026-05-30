@@ -158,8 +158,8 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'shobit848@gmail.com'
 EMAIL_HOST_USER = 'singh.yogi006@gmail.com'
 # EMAIL_HOST_PASSWORD = 'gerhvmylsbwjnufa'
-EMAIL_HOST_PASSWORD = 'fsykszpikgyghltr'
-# EMAIL_HOST_PASSWORD = 'ebxtduwkdyiiadxh'
+# EMAIL_HOST_PASSWORD = 'fsykszpikgyghltr'
+EMAIL_HOST_PASSWORD = 'ebxtduwkdyiiadxh'
 DEFAULT_FROM_EMAIL = 'PNY Talent Solutions <singh.yogi006@gmail.com>'
 
 CORS_ALLOW_HEADERS = [
