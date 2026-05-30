@@ -117,7 +117,7 @@ class JobApplicationCreateAPIView(generics.CreateAPIView):
             f"</div>"
         )
 
-        recipient_list = ['yogendra@pnysolutions.com']
+        recipient_list = ['shobhitdixit093@gmail.com']
 
         try:
             email = EmailMultiAlternatives(
@@ -144,7 +144,7 @@ class JobApplicationCreateAPIView(generics.CreateAPIView):
                         pass
 
             email.send(fail_silently=False)
-            print(f"[PNY] Application email dispatched successfully to shobitsharma26@gmail.com for: {job_title}")
+            print(f"[PNY] Application email dispatched successfully to shobhitdixit093@gmail.com for: {job_title}")
         except Exception as e:
             # Catch all SMTP errors so the API still returns 201 even on network failure
             print(f"[PNY] SMTP application email dispatch failed: {str(e)}")
@@ -234,7 +234,7 @@ class ClientInquiryCreateAPIView(generics.CreateAPIView):
             f"</div>"
         )
 
-        recipient_list = ['yogendra@pnysolutions.com']
+        recipient_list = ['shobhitdixit093@gmail.com']
 
         try:
             send_mail(
@@ -245,7 +245,7 @@ class ClientInquiryCreateAPIView(generics.CreateAPIView):
                 html_message=html_message,
                 fail_silently=False
             )
-            print(f"[PNY] Inquiry email dispatched successfully to shobitsharma26@gmail.com")
+            print(f"[PNY] Inquiry email dispatched successfully to shobhitdixit093@gmail.com")
         except Exception as e:
             # We catch exceptions so that even if SMTP experiences network errors, 
             # the API request successfully responds, ensuring perfect front-end stability.
