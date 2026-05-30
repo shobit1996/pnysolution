@@ -155,12 +155,13 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'shobit848@gmail.com'
-EMAIL_HOST_USER = 'singh.yogi006@gmail.com'
+# EMAIL_HOST_USER = 'shobit848@gmail.com'
+EMAIL_HOST_USER = 'shobhitsharma120@gmail.com'
+EMAIL_HOST_PASSWORD = 'euxmvxnzgkpdthnl'
 # EMAIL_HOST_PASSWORD = 'gerhvmylsbwjnufa'
 # EMAIL_HOST_PASSWORD = 'fsykszpikgyghltr'
-EMAIL_HOST_PASSWORD = 'ebxtduwkdyiiadxh'
-DEFAULT_FROM_EMAIL = 'PNY Talent Solutions <singh.yogi006@gmail.com>'
+# EMAIL_HOST_PASSWORD = 'ebxtduwkdyiiadxh'
+DEFAULT_FROM_EMAIL = 'PNY Talent Solutions <shobhitsharma120@gmail.com>'
 
 CORS_ALLOW_HEADERS = [
     'accept',
