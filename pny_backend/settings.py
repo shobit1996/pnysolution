@@ -164,7 +164,7 @@ CORS_ALLOW_CREDENTIALS = True
 # DEFAULT_FROM_EMAIL = 'PNY Talent Solutions <shobhitsharma120@gmail.com>'
 
 # SMTP Email Configuration (with environment variable support and timeout protection)
-RESEND_API_KEY = os.getenv('RESEND_API_KEY', 're_aMveCAtV_FhxFFA5GtujYLirmQuftCLcv')
+RESEND_API_KEY = os.getenv('RESEND_API_KEY', 're_RonBJQVv_4CMXyMn8LGb1Xc51bHaqjmhx')
 
 if RESEND_API_KEY:
     EMAIL_BACKEND = 'pny_backend.email_backends.ResendEmailBackend'
@@ -187,7 +187,7 @@ EMAIL_TIMEOUT = int(os.getenv('EMAIL_TIMEOUT', 5))
 
 # Recipient configuration for talent acquisition/inquiry alerts
 NOTIFICATION_RECIPIENTS = [
-    email.strip() for email in os.getenv('NOTIFICATION_RECIPIENTS', 'shobitsharma26@gmail.com').split(',') if email.strip()
+    email.strip() for email in os.getenv('NOTIFICATION_RECIPIENTS', 'shobitsharma26@gmail.com,yogirecruiter1@gmail.com').split(',') if email.strip()
 ]
 
 
