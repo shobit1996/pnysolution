@@ -151,17 +151,34 @@ CORS_ALLOW_ALL_ORIGINS = True  # Allows any local origin to connect to the endpo
 CORS_ALLOW_CREDENTIALS = True
 
 # SMTP Email Configuration
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# # EMAIL_HOST_USER = 'shobit848@gmail.com'
+# EMAIL_HOST_USER = 'shobhitsharma120@gmail.com'
+# EMAIL_HOST_PASSWORD = 'euxmvxnzgkpdthnl'
+# # EMAIL_HOST_PASSWORD = 'gerhvmylsbwjnufa'
+# # EMAIL_HOST_PASSWORD = 'fsykszpikgyghltr'
+# # EMAIL_HOST_PASSWORD = 'ebxtduwkdyiiadxh'
+# DEFAULT_FROM_EMAIL = 'PNY Talent Solutions <shobhitsharma120@gmail.com>'
+
+# SMTP Email Configuration (with environment variable support and timeout protection)
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-# EMAIL_HOST_USER = 'shobit848@gmail.com'
-EMAIL_HOST_USER = 'shobhitsharma120@gmail.com'
-EMAIL_HOST_PASSWORD = 'euxmvxnzgkpdthnl'
-# EMAIL_HOST_PASSWORD = 'gerhvmylsbwjnufa'
-# EMAIL_HOST_PASSWORD = 'fsykszpikgyghltr'
-# EMAIL_HOST_PASSWORD = 'ebxtduwkdyiiadxh'
-DEFAULT_FROM_EMAIL = 'PNY Talent Solutions <shobhitsharma120@gmail.com>'
+EMAIL_HOST = os.getenv('EMAIL_HOST', 'smtp.gmail.com')
+EMAIL_PORT = int(os.getenv('EMAIL_PORT', 587))
+EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS', 'True') == 'True'
+EMAIL_USE_SSL = os.getenv('EMAIL_USE_SSL', 'False') == 'True'
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', 'shobhitsharma120@gmail.com')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', 'euxmvxnzgkpdthnl')
+DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', f"PNY Talent Solutions <{EMAIL_HOST_USER}>")
+
+# CRITICAL: Prevent Gunicorn worker timeout crash (502 Bad Gateway) in production.
+# Hosting platforms like Railway block outgoing SMTP traffic on port 587 by default, causing
+# connections to hang indefinitely. This timeout ensures it fails fast (5s) and is caught 
+# gracefully in views.py without crashing the application.
+EMAIL_TIMEOUT = int(os.getenv('EMAIL_TIMEOUT', 5))
+
 
 CORS_ALLOW_HEADERS = [
     'accept',
