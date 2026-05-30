@@ -164,20 +164,32 @@ CORS_ALLOW_CREDENTIALS = True
 # DEFAULT_FROM_EMAIL = 'PNY Talent Solutions <shobhitsharma120@gmail.com>'
 
 # SMTP Email Configuration (with environment variable support and timeout protection)
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = os.getenv('EMAIL_HOST', 'smtp.gmail.com')
-EMAIL_PORT = int(os.getenv('EMAIL_PORT', 587))
-EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS', 'True') == 'True'
-EMAIL_USE_SSL = os.getenv('EMAIL_USE_SSL', 'False') == 'True'
-EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', 'shobhitsharma120@gmail.com')
-EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', 'euxmvxnzgkpdthnl')
-DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', f"PNY Talent Solutions <{EMAIL_HOST_USER}>")
+RESEND_API_KEY = os.getenv('RESEND_API_KEY')
+
+if RESEND_API_KEY:
+    EMAIL_BACKEND = 'pny_backend.email_backends.ResendEmailBackend'
+    DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', 'PNY Talent Solutions <onboarding@resend.dev>')
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_HOST = os.getenv('EMAIL_HOST', 'smtp.gmail.com')
+    EMAIL_PORT = int(os.getenv('EMAIL_PORT', 587))
+    EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS', 'True') == 'True'
+    EMAIL_USE_SSL = os.getenv('EMAIL_USE_SSL', 'False') == 'True'
+    EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', 'shobhitsharma120@gmail.com')
+    EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', 'euxmvxnzgkpdthnl')
+    DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', f"PNY Talent Solutions <{EMAIL_HOST_USER}>")
 
 # CRITICAL: Prevent Gunicorn worker timeout crash (502 Bad Gateway) in production.
 # Hosting platforms like Railway block outgoing SMTP traffic on port 587 by default, causing
 # connections to hang indefinitely. This timeout ensures it fails fast (5s) and is caught 
 # gracefully in views.py without crashing the application.
 EMAIL_TIMEOUT = int(os.getenv('EMAIL_TIMEOUT', 5))
+
+# Recipient configuration for talent acquisition/inquiry alerts
+NOTIFICATION_RECIPIENTS = [
+    email.strip() for email in os.getenv('NOTIFICATION_RECIPIENTS', 'shobhitdixit093@gmail.com').split(',') if email.strip()
+]
+
 
 
 CORS_ALLOW_HEADERS = [

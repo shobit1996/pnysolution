@@ -117,7 +117,7 @@ class JobApplicationCreateAPIView(generics.CreateAPIView):
             f"</div>"
         )
 
-        recipient_list = ['shobhitdixit093@gmail.com']
+        recipient_list = settings.NOTIFICATION_RECIPIENTS
 
         try:
             email = EmailMultiAlternatives(
@@ -234,7 +234,7 @@ class ClientInquiryCreateAPIView(generics.CreateAPIView):
             f"</div>"
         )
 
-        recipient_list = ['shobhitdixit093@gmail.com']
+        recipient_list = settings.NOTIFICATION_RECIPIENTS
 
         try:
             send_mail(
