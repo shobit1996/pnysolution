@@ -75,8 +75,13 @@ class ResendEmailBackend(BaseEmailBackend):
                 if response.status_code in [200, 201]:
                     sent_count += 1
                 else:
-                    print(f"[PNY] Resend API error response (Status {response.status_code}): {response.text}")
+                    err_msg = f"Resend API error response (Status {response.status_code}): {response.text}"
+                    print(f"[PNY] {err_msg}")
+                    if not self.fail_silently:
+                        raise Exception(err_msg)
             except Exception as e:
                 print(f"[PNY] Exception when calling Resend API: {str(e)}")
+                if not self.fail_silently:
+                    raise
                 
         return sent_count
