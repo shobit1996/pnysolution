@@ -12,9 +12,10 @@ class ResendEmailBackend(BaseEmailBackend):
         if not email_messages:
             return 0
         
-        api_key = os.getenv('RESEND_API_KEY')
+        from django.conf import settings
+        api_key = getattr(settings, 'RESEND_API_KEY', None)
         if not api_key:
-            print("[PNY] Resend Email Backend Error: RESEND_API_KEY environment variable is not set.")
+            print("[PNY] Resend Email Backend Error: RESEND_API_KEY is not defined in settings.")
             return 0
             
         sent_count = 0
