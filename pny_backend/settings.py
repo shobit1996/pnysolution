@@ -175,8 +175,8 @@ else:
     EMAIL_PORT = int(os.getenv('EMAIL_PORT', 587))
     EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS', 'True') == 'True'
     EMAIL_USE_SSL = os.getenv('EMAIL_USE_SSL', 'False') == 'True'
-    EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', 'shobhitsharma120@gmail.com')
-    EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', 'euxmvxnzgkpdthnl')
+    EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', 'shobitsharma26@gmail.com')
+    EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', 'skktxkzikiljgcrj')
     DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', f"PNY Talent Solutions <{EMAIL_HOST_USER}>")
 
 # CRITICAL: Prevent Gunicorn worker timeout crash (502 Bad Gateway) in production.
