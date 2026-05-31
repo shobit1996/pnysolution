@@ -187,7 +187,7 @@ EMAIL_TIMEOUT = int(os.getenv('EMAIL_TIMEOUT', 5))
 
 # Recipient configuration for talent acquisition/inquiry alerts
 NOTIFICATION_RECIPIENTS = [
-    email.strip() for email in os.getenv('NOTIFICATION_RECIPIENTS', 'shobitsharma26@gmail.com','yogirecruiter1@gmail.com').split(',') if email.strip()
+    email.strip() for email in os.getenv('NOTIFICATION_RECIPIENTS', 'shobitsharma26@gmail.com,yogirecruiter1@gmail.com').split(',') if email.strip()
 ]
 
 
