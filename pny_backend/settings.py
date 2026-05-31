@@ -164,7 +164,7 @@ CORS_ALLOW_CREDENTIALS = True
 # DEFAULT_FROM_EMAIL = 'PNY Talent Solutions <shobhitsharma120@gmail.com>'
 
 # SMTP Email Configuration (with environment variable support and timeout protection)
-RESEND_API_KEY = os.getenv('RESEND_API_KEY', 're_aMveCAtV_FhxFFA5GtujYLirmQuftCLcv')
+RESEND_API_KEY = os.getenv('RESEND_API_KEY', 're_RonBJQVv_4CMXyMn8LGb1Xc51bHaqjmhx')
 
 if RESEND_API_KEY:
     EMAIL_BACKEND = 'pny_backend.email_backends.ResendEmailBackend'
