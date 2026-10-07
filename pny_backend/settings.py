@@ -153,6 +153,24 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # ---------------------------------------------------------------------------
+# Django REST Framework
+# ---------------------------------------------------------------------------
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+    ] if not DEBUG else [
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    ],
+    'DEFAULT_PARSER_CLASSES': [
+        'rest_framework.parsers.JSONParser',
+        'rest_framework.parsers.MultiPartParser',
+        'rest_framework.parsers.FormParser',
+    ],
+}
+
+
+# ---------------------------------------------------------------------------
 # CORS Configuration
 # ---------------------------------------------------------------------------
 # In production (DEBUG=False) only the explicitly listed origins are allowed.
