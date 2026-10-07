@@ -48,7 +48,7 @@ class SupabaseStorage(Storage):
             file=file_data,
             file_options={
                 "content-type": content_type,
-                "upsert": True,  # boolean, not string
+                "upsert": "true",  # must be string for supabase-py header serialization
             },
         )
         return name
