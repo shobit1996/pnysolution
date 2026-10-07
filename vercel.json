@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "buildCommand": "bash build_files.sh",
   "builds": [
     {
       "src": "pny_backend/wsgi.py",
@@ -11,6 +12,10 @@
     }
   ],
   "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
     {
       "src": "/(.*)",
       "dest": "pny_backend/wsgi.py"
