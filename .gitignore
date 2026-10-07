@@ -46,4 +46,4 @@ Thumbs.db
 .kiro/
 
 # Static files collected
-staticfiles/
+# staticfiles/ — committed to repo so Vercel bundles them (WhiteNoise serves them)
