@@ -142,7 +142,8 @@ SUPABASE_SERVICE_KEY = config('SUPABASE_SERVICE_KEY', default='')
 SUPABASE_STORAGE_BUCKET = config('SUPABASE_STORAGE_BUCKET', default='resumes')
 
 # Cloud storage for media files (Supabase Storage — no AWS)
-if not DEBUG:
+# Always use cloud storage when SUPABASE_URL is configured (works in both DEBUG and production)
+if SUPABASE_URL and SUPABASE_SERVICE_KEY:
     DEFAULT_FILE_STORAGE = 'pny_backend.supabase_storage.SupabaseStorage'
 
 
