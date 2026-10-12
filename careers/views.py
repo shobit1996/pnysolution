@@ -52,7 +52,7 @@ class JobApplicationCreateAPIView(generics.CreateAPIView):
 
         # Plain text fallback body
         message_body = (
-            f"Hello Shobhit,\n\n"
+            f"Hello PNY Talent Solutions,\n\n"
             f"A new candidate has applied for a role on the PNY Talent Solutions website.\n\n"
             f"Application Details:\n"
             f"-----------------------------------------\n"
@@ -76,7 +76,7 @@ class JobApplicationCreateAPIView(generics.CreateAPIView):
         html_message = (
             f"<div style='font-family: Arial, sans-serif; max-width: 620px; border: 1px solid #edf2f7; padding: 28px; border-radius: 10px; background-color: #f7fafc;'>"
             f"  <h2 style='color: #162646; margin-top: 0; border-bottom: 2px solid #00cccc; padding-bottom: 10px;'>📋 New Job Application Received</h2>"
-            f"  <p style='color: #4a5568; font-size: 15px;'>Hello Shobhit,</p>"
+            f"  <p style='color: #4a5568; font-size: 15px;'>Hello PNY Talent Solutions,</p>"
             f"  <p style='color: #4a5568; font-size: 14px;'>A candidate has submitted an application for the <strong style='color: #162646;'>{job_title}</strong> role on the PNY Talent Solutions website. Their full details are below:</p>"
             f"  <div style='background: #eef6ff; border-left: 4px solid #162646; border-radius: 4px; padding: 10px 16px; margin: 16px 0; font-size: 13px; color: #162646;'>"
             f"    <strong>Role:</strong> {job_title} &nbsp;|&nbsp; <strong>Dept:</strong> {job_department} &nbsp;|&nbsp; <strong>Location:</strong> {job_location}"
@@ -184,7 +184,7 @@ class ClientInquiryCreateAPIView(generics.CreateAPIView):
 
         # Composing the rich text plain body
         message_body = (
-            f"Hello Shobhit,\n\n"
+            f"Hello PNY Talent Solutions,\n\n"
             f"You have received a new Client Partnership Inquiry from the PNY Talent Solutions website.\n\n"
             f"Here are the candidate inquiry details:\n"
             f"-----------------------------------------\n"
@@ -204,7 +204,7 @@ class ClientInquiryCreateAPIView(generics.CreateAPIView):
         html_message = (
             f"<div style='font-family: Arial, sans-serif; max-width: 600px; border: 1px solid #edf2f7; padding: 25px; border-radius: 8px; background-color: #f7fafc;'>"
             f"  <h2 style='color: #162646; margin-top: 0; font-family: sans-serif; border-bottom: 2px solid #00cccc; padding-bottom: 10px;'>New Business Inquiry</h2>"
-            f"  <p style='color: #4a5568; font-size: 15px;'>Hello Shobhit Kumar,</p>"
+            f"  <p style='color: #4a5568; font-size: 15px;'>Hello PNY Talent Solutions,</p>"
             f"  <p style='color: #4a5568; font-size: 14px;'>A user has submitted a business partnership inquiry on the PNY Talent Solutions website. Details are outlined below:</p>"
             f"  <div style='background: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 15px 20px; margin: 20px 0;'>"
             f"    <table style='width: 100%; border-collapse: collapse; font-size: 14px; color: #4a5568;'>"
